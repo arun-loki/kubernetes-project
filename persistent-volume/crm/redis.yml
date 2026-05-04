@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: sloopstash-${ENVIRONMENT}-crm-redis-0-data
+  name: Arunk-${ENVIRONMENT}-crm-redis-0-data
 spec:
-  storageClassName: sloopstash-${ENVIRONMENT}-crm-redis-data
+  storageClassName: Arunk-${ENVIRONMENT}-crm-redis-data
   capacity:
     storage: 5Gi
   volumeMode: Filesystem
@@ -11,7 +11,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: /mnt/sloopstash/${ENVIRONMENT}/crm/redis/0/data
+    path: /mnt/Arunk/${ENVIRONMENT}/crm/redis/0/data
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -24,9 +24,9 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: sloopstash-${ENVIRONMENT}-crm-redis-0-log
+  name: Arunk-${ENVIRONMENT}-crm-redis-0-log
 spec:
-  storageClassName: sloopstash-${ENVIRONMENT}-crm-redis-log
+  storageClassName: Arunk-${ENVIRONMENT}-crm-redis-log
   capacity:
     storage: 2Gi
   volumeMode: Filesystem
@@ -34,7 +34,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: /mnt/sloopstash/${ENVIRONMENT}/crm/redis/0/log
+    path: /mnt/Arunk/${ENVIRONMENT}/crm/redis/0/log
   nodeAffinity:
     required:
       nodeSelectorTerms:
