@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sloopstash-${ENVIRONMENT}-crm-nginx-log
+  name: Arunk-${ENVIRONMENT}-crm-nginx-log
 spec:
-  storageClassName: sloopstash-${ENVIRONMENT}-crm-nginx-log
-  volumeName: sloopstash-${ENVIRONMENT}-crm-nginx-log
+  storageClassName: Arunk-${ENVIRONMENT}-crm-nginx-log
+  volumeName: Arunk-${ENVIRONMENT}-crm-nginx-log
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
