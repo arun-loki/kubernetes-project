@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: main
-      image: sloopstash/nginx:v1.24.0
+      image: Arunk/nginx:v1.24.0
       command: ["/usr/bin/supervisord"]
       args: ["-c", "/etc/supervisord.conf"]
       volumeMounts:
@@ -23,7 +23,7 @@ spec:
       ports:
         - containerPort: 80
     - name: log
-      image: sloopstash/nginx:v1.24.0
+      image: Arunk/nginx:v1.24.0
       command: ["/usr/bin/supervisord"]
       args: ["-c", "/etc/supervisord.conf"]
       volumeMounts:
@@ -35,7 +35,7 @@ spec:
   volumes:
     - name: nginx-log
       persistentVolumeClaim:
-        claimName: sloopstash-${ENVIRONMENT}-crm-nginx-log
+        claimName: Arunk-${ENVIRONMENT}-crm-nginx-log
     - name: supervisor-server
       configMap:
         name: nginx
