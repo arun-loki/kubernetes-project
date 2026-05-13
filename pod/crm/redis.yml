@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: main
-      image: sloopstash/redis:v7.2.1
+      image: Arunk/redis:v7.2.1
       command: ["/usr/bin/supervisord"]
       args: ["-c", "/etc/supervisord.conf"]
       volumeMounts:
@@ -25,7 +25,7 @@ spec:
       ports:
         - containerPort: 3000
     - name: log
-      image: sloopstash/redis:v7.2.1
+      image: Arunk/redis:v7.2.1
       command: ["/usr/bin/supervisord"]
       args: ["-c", "/etc/supervisord.conf"]
       volumeMounts:
@@ -37,10 +37,10 @@ spec:
   volumes:
     - name: redis-data
       persistentVolumeClaim:
-        claimName: sloopstash-${ENVIRONMENT}-crm-redis-data
+        claimName: Arunk-${ENVIRONMENT}-crm-redis-data
     - name: redis-log
       persistentVolumeClaim:
-        claimName: sloopstash-${ENVIRONMENT}-crm-redis-log
+        claimName: Arunk-${ENVIRONMENT}-crm-redis-log
     - name: supervisor-server
       configMap:
         name: redis
