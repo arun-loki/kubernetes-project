@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: main
-          image: sloopstash/python:v2.7
+          image: Arunk/python:v2.7
           command: ["/usr/bin/supervisord"]
           args: ["-c", "/etc/supervisord.conf"]
           env:
             - name: STATIC_ENDPOINT
-              value: app-static.crm.sloopstash.${ENVIRONMENT}:${CRM_NGINX_PORT}
+              value: app-static.crm.Arunk.${ENVIRONMENT}:${CRM_NGINX_PORT}
           volumeMounts:
             - name: app-source
               mountPath: /opt/app/source
@@ -34,7 +34,7 @@ spec:
           ports:
             - containerPort: 2000
         - name: log
-          image: sloopstash/python:v2.7
+          image: Arunk/python:v2.7
           command: ["/usr/bin/supervisord"]
           args: ["-c", "/etc/supervisord.conf"]
           volumeMounts:
@@ -50,7 +50,7 @@ spec:
             type: Directory
         - name: app-log
           persistentVolumeClaim:
-            claimName: sloopstash-${ENVIRONMENT}-crm-app-log
+            claimName: Arunk-${ENVIRONMENT}-crm-app-log
         - name: supervisor-server
           configMap:
             name: app
