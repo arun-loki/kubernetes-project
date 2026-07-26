@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: main
-          image: sloopstash/redis:v7.2.1
+          image: Arunk/redis:v7.2.1
           command: ["/usr/bin/supervisord"]
           args: ["-c", "/etc/supervisord.conf"]
           volumeMounts:
@@ -34,7 +34,7 @@ spec:
           ports:
             - containerPort: 3000
         - name: log
-          image: sloopstash/redis:v7.2.1
+          image: Arunk/redis:v7.2.1
           command: ["/usr/bin/supervisord"]
           args: ["-c", "/etc/supervisord.conf"]
           volumeMounts:
@@ -69,8 +69,8 @@ spec:
     - metadata:
         name: redis-data
       spec:
-        storageClassName: sloopstash-${ENVIRONMENT}-crm-redis-data
-        volumeName: sloopstash-${ENVIRONMENT}-crm-redis-0-data
+        storageClassName: Arunk-${ENVIRONMENT}-crm-redis-data
+        volumeName: Arunk-${ENVIRONMENT}-crm-redis-0-data
         volumeMode: Filesystem
         accessModes:
           - ReadWriteOnce
@@ -80,8 +80,8 @@ spec:
     - metadata:
         name: redis-log
       spec:
-        storageClassName: sloopstash-${ENVIRONMENT}-crm-redis-log
-        volumeName: sloopstash-${ENVIRONMENT}-crm-redis-0-log
+        storageClassName: Arunk-${ENVIRONMENT}-crm-redis-log
+        volumeName: Arunk-${ENVIRONMENT}-crm-redis-0-log
         volumeMode: Filesystem
         accessModes:
           - ReadWriteOnce
